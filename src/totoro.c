@@ -30,17 +30,18 @@ void handle_init(AppContextRef ctx) {
   text_layer_init(&text_date_layer, window.layer.frame);
   text_layer_set_text_color(&text_date_layer, GColorBlack);
   text_layer_set_background_color(&text_date_layer, GColorClear);
-  layer_set_frame(&text_date_layer.layer, GRect(3, 3, 100, 40));
+  layer_set_frame(&text_date_layer.layer, GRect(87, 150, 52, 15));
 
-  text_layer_set_font(&text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_ROBOTO_CONDENSED_18)));
+  text_layer_set_font(&text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_GOTHIC_REGULAR_12)));
   layer_add_child(&window.layer, &text_date_layer.layer);
 
   // Time
   text_layer_init(&text_time_layer, window.layer.frame);
   text_layer_set_text_color(&text_time_layer, GColorBlack);
   text_layer_set_background_color(&text_time_layer, GColorClear);
-  layer_set_frame(&text_time_layer.layer, GRect(3, 20, 100, 50));
-  text_layer_set_font(&text_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_ROBOTO_BOLD_SUBSET_24)));
+  layer_set_frame(&text_time_layer.layer, GRect(0, 0, 144, 44));
+  text_layer_set_font(&text_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_GOTHIC_REGULAR_36)));
+  text_layer_set_text_alignment(&text_time_layer, GTextAlignmentCenter);
   layer_add_child(&window.layer, &text_time_layer.layer);
 
 }

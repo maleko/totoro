@@ -14,15 +14,15 @@
     },
     {
       "type": "font",
-      "defName": "FONT_ROBOTO_CONDENSED_18",
-      "file": "fonts/Roboto-Condensed.ttf"
+      "defName": "FONT_GOTHIC_REGULAR_12",
+      "file": "fonts/gothic.ttf"
     },
 
     {
       "type": "font",
       "characterRegex": "[:0-9]",
-      "defName": "FONT_ROBOTO_BOLD_SUBSET_24",
-      "file": "fonts/Roboto-Bold.ttf"
+      "defName": "FONT_GOTHIC_REGULAR_36",
+      "file": "fonts/gothic.ttf"
     }
   ]
 }
