@@ -27,6 +27,7 @@ void handle_init(AppContextRef ctx) {
 
 
   // Date
+  // Initialises the date and sets the text, font and background colour
   text_layer_init(&text_date_layer, window.layer.frame);
   text_layer_set_text_color(&text_date_layer, GColorBlack);
   text_layer_set_background_color(&text_date_layer, GColorClear);
@@ -36,10 +37,12 @@ void handle_init(AppContextRef ctx) {
   layer_add_child(&window.layer, &text_date_layer.layer);
 
   // Time
+  // Initialises the time and sets the text, font and background colour
   text_layer_init(&text_time_layer, window.layer.frame);
   text_layer_set_text_color(&text_time_layer, GColorBlack);
   text_layer_set_background_color(&text_time_layer, GColorClear);
   layer_set_frame(&text_time_layer.layer, GRect(0, 0, 144, 44));
+
   text_layer_set_font(&text_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_GOTHIC_REGULAR_36)));
   text_layer_set_text_alignment(&text_time_layer, GTextAlignmentCenter);
   layer_add_child(&window.layer, &text_time_layer.layer);
@@ -61,7 +64,7 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t) {
   string_format_time(date_text, sizeof(date_text), "%B %e", t->tick_time);
   text_layer_set_text(&text_date_layer, date_text);
 
-
+  // Caters for  the time format. 
   if (clock_is_24h_style()) {
     time_format = "%R";
   } else {
